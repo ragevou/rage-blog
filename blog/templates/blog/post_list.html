@@ -15,6 +15,17 @@
         <p>published: the same day</p>
         <H2>Second one</H2>
         <a href="http://djangogirls.org">mwahaha</a>
+    <div>
+        <p>published: a bit later</p>
+        <H2>some posts in brackets</H2>
+        {% for post in posts %}
+        <div>
+            <p>published: {{ post.publish_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+        </div>
+        {% endfor %}
+    </div>
     </body>
 
 </html>
